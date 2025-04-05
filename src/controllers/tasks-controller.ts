@@ -133,7 +133,7 @@ class TasksController {
       return res.status(200).json({ message: "Task updated successfully" });
     } catch (error) {
       console.error("Error updating task:", error);
-      return res.status(500).json({ message: "Error updating task", error: error.message });
+      return res.status(500).json({ message: "Error updating task", error: (error as Error).message });
     }
   }
 
